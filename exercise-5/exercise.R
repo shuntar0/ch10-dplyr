@@ -9,7 +9,9 @@ library(dplyr)
 # What was the average departure delay in each month?
 # Save this as a data frame `dep_delay_by_month`
 # Hint: you'll have to perform a grouping operation then summarizing your data
-
+dep_delay_by_month <- flights %>% 
+  group_by(month) %>% 
+  summarize(avg_delay = mean(dep_delay, na.rm = T))
 
 # Which month had the greatest average departure delay?
 

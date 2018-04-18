@@ -2,19 +2,22 @@
 
 # Install the `nycflights13` package. Load (`library()`) the package.
 # You'll also need to load `dplyr`
-
+library(nycflights13)
 
 # The data frame `flights` should now be accessible to you.
 # Use functions to inspect it: how many rows and columns does it have?
 # What are the names of the columns?
 # Use `??flights` to search for documentation on the data set (for what the 
 # columns represent)
+nrow(flights)
+ncol(flights)
 
 
 # Use `dplyr` to give the data frame a new column that is the amount of time
 # gained or lost while flying (that is: how much of the delay arriving occured
 # during flight, as opposed to before departing).
-
+flights <- flights %>% 
+  mutate(time_gained, arr_delay -dep_delay)
 
 # Use `dplyr` to sort your data frame in descending order by the column you just
 # created. Remember to save this as a variable (or in the same one!)
